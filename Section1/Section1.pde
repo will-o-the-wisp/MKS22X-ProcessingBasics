@@ -48,7 +48,18 @@ class Visualizer {
     //Negative values are red, and go below the line.
     //Positive values are green and go above the line.
     for(int i=0;i<values.length;i++){
-      fill(Math.abs(values[i])*255/100,255-Math.abs(values[i])*255/100,0);
+      if(values[i]>=50){
+        fill(0,255,0);
+      }
+      else if(values[i]>=0){
+        fill(255,255,0); 
+      }
+      else if(values[i]>=-50){
+        fill(255,165,0);
+      }
+      else{
+        fill(255,0,0);
+      }
       rect(x+400*i/values.length,y+100-values[i],400/values.length,values[i]);
     }
     //???WRITE THIS METHOD!!!
